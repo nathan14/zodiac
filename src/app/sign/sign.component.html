@@ -1,0 +1,16 @@
+<div class="sign" *ngIf="result">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4 result">
+			<h2>{{name}}</h2>
+			<h4 *ngFor="let sign of result; let index = index">
+				{{index ? 'New' : 'Old'}} {{sign.start | date: 'dd/MM'}} - {{sign.end | date: 'dd/MM'}}
+			</h4>
+			<div class="glyph"><i class="glyph-icon" [ngClass]="'flaticon-' + name"></i></div> 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+			<button class="btn btn-primary btn-block btn-lg" [routerLink]="['/']">Back</button>
+		</div>
+	</div>
+</div>
