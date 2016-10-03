@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
@@ -21,7 +22,7 @@ import { MainComponent } from './main/main.component';
     Ng2BootstrapModule,
     routing
   ],
-  providers: [ ZodiacV2RoutingModule ],
+  providers: [ ZodiacV2RoutingModule, { provide: APP_BASE_HREF, useValue : '/zodiac/' } ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
